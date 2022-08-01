@@ -9,5 +9,6 @@ router.get('/restaurants/:id', restaurants.getOneRestaurant)
 
 // review routes
 router.get('/reviews', reviews.getAllReviews)
+router.post('/reviews', reviews.createReview)
 
 module.exports = router;

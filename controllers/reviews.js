@@ -5,6 +5,12 @@ const getAllReviews = async (req, res) => {
     res.send(allReviews)
 }
 
+const createReview = async (req, res) => {
+    let newReview = await Review.create(req.body)
+    res.send(newReview)
+}
+
 module.exports = {
-    getAllReviews
+    getAllReviews,
+    createReview
 }
