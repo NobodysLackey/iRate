@@ -1,9 +1,9 @@
 const { Router } = require('express');
-const controllers = require('../controllers')
+const { restaurants } = require('../controllers')
 const router = Router();
 
-router.get('/restaurants', controllers.getAllRestaurants)
-router.post('/restaurants', controllers.createRestaurant)
-router.get('/restaurants/:id', controllers.getOneRestaurant)
+router.get('/restaurants', restaurants.getAllRestaurants)
+router.post('/restaurants', restaurants.createRestaurant)
+router.get('/restaurants/:id', restaurants.getOneRestaurant)
 
 module.exports = router;
