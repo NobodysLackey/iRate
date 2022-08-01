@@ -15,8 +15,14 @@ const getReview = async (req, res) => {
     res.send(review)
 }
 
+const updateReview = async (req, res) => {
+    let updatedReview = await Review.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    res.send(updatedReview)
+}
+
 module.exports = {
     getAllReviews,
     createReview,
-    getReview
+    getReview,
+    updateReview
 }
