@@ -1,5 +1,5 @@
 {
-  "name": "u2_restaurant_reviews_app",
+  "name": "u2_restaurant_reviews",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -17,8 +17,5 @@
   "bugs": {
     "url": "https://github.com/SEI-R-6-21/u2_restaurant_reviews_app/issues"
   },
-  "homepage": "https://github.com/SEI-R-6-21/u2_restaurant_reviews_app#readme",
-  "dependencies": {
-    "express": "^4.18.1"
-  }
+  "homepage": "https://github.com/SEI-R-6-21/u2_restaurant_reviews_app#readme"
 }
