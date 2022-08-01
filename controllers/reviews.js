@@ -22,7 +22,7 @@ const updateReview = async (req, res) => {
 
 const deleteReview = async (req, res) => {
     let deletedRecord = await Review.findByIdAndDelete(req.params.id)
-    res.send(deleteRecord)
+    res.send(deletedRecord)
 }
 
 module.exports = {
