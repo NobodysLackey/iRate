@@ -1,7 +1,7 @@
 const { Restaurant } = require('../models')
 
 const getAllRestaurants = async (req, res) => {
-    let restaurants = await Restaurant.find({})
+    let restaurants = await Restaurant.find({}).populate('reviews')
     res.send(restaurants)
 }
 
