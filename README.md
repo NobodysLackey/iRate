@@ -1,1 +1,7 @@
-# u2_restaurant_reviews_app
+# Restaurant Reviews
+
+
+
+
+## ERD
+![erd](/photos/erd.png)
