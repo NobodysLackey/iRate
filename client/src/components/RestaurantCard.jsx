@@ -1,7 +1,10 @@
-const RestaurantCard = () => {
+const RestaurantCard = ({ restaurant }) => {
 
   return (
-    <div>RestaurantCard</div>
+    <span className="restaurant-card">
+      <h4>{restaurant.name}</h4>
+      <h5>{restaurant.location}</h5>
+    </span>
   )
 }
 
