@@ -1,5 +1,9 @@
 const ReviewForm = () => {
-  return <div>ReviewForm</div>
+  return (
+    <section className="page">
+      <h3>Review Form</h3>
+    </section>
+  )
 }
 
 export default ReviewForm

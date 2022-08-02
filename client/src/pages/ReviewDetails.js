@@ -1,5 +1,9 @@
 const ReviewDetails = () => {
-  return <div>ReviewDetails</div>
+  return (
+    <section className="page">
+      <h3>Review Details</h3>
+    </section>
+  )
 }
 
 export default ReviewDetails

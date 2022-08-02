@@ -1,5 +1,122 @@
-body {
+* {
   margin: 0;
   padding: 0;
+}
+
+.app {
   text-align: center;
+  height: 100vh;
+  font-family: 'Nanum Brush Script', cursive;
+}
+
+.nav-links > a {
+  font-size: 3vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-links > a, #logo > a {
+  color: #ffffff;
+  text-decoration: none;
+  width: 25vw;
+  height: 10vh;
+  user-select: none;
+}
+
+.nav-links > a:hover, #logo > a:hover {
+  color: #ffcc00;
+}
+
+nav {
+  background-color: #eb4d01;
+  color: #ffffff;
+  height: 10vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav-links {
+  width: 75vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.active {
+  background-color:#e97b00;
+  box-shadow: 0 8px 8px -4px rgb(113, 113, 113);
+}
+
+#logo {
+  font-family: 'Frijole', cursive;
+  font-size: 40px;
+  width: 25vw;
+  height: 10vh;
+  line-height: 10vh;
+  padding: 20px;
+}
+
+#emoji  {
+  font-size: 200px;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+}
+
+.page {
+  background-color: #b3b3b3;
+  height: 88vh;
+  padding-top: 2vh;
+}
+
+.home > h1 {
+  color: white;
+  font-size: 35px;
+}
+
+#home-logo {
+  font-family: 'Frijole', cursive;
+  font-size: 30px;
+}
+
+.restaurant-card {
+  background-color: #d6d6d6;
+  border: 2px #000000 solid;
+  border-radius: 15px 40px;
+  box-shadow: 10px 10px 5px #969696;
+  width: 40vw;
+  max-width: 400px;
+  height: 10vh;
+  min-height: 125px;
+  margin: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 25px;
+}
+
+.restaurant-card:hover {
+  background-color:#ffcc00;
+  border: 2px #eb4d01 solid;
+  border-radius: 15px;
+
+  color: black;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
