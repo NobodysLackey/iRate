@@ -9,6 +9,15 @@
   font-family: 'Nanum Brush Script', cursive;
 }
 
+div > a {
+  color: black;
+  text-decoration: none;
+}
+
+img {
+  max-width: 80vw;
+}
+
 .nav-links > a {
   font-size: 3vh;
 

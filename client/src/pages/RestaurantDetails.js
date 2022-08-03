@@ -1,7 +1,10 @@
-const RestaurantDetails = () => {
+const RestaurantDetails = ({ selectedRestaurant }) => {
+
   return (
     <section className="page">
-      <h3>Restaurant Details</h3>
+      <h1>{selectedRestaurant.name}</h1>
+      <img src={selectedRestaurant.photo_url} alt={selectedRestaurant.name} />
+      <h1>{selectedRestaurant.location}</h1>
     </section>
   )
 }

@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { BASE_URL } from './globals'
 import axios from 'axios'
@@ -13,8 +13,11 @@ import Nav from './components/Nav'
 import Home from './pages/Home'
 
 const App = () => {
+  let navigate = useNavigate()
+
   const [anger, setAnger] = useState("😠")
   const [restaurants, setRestaurants] = useState([])
+  const [selectedRestaurant, setSelectedRestaurant] = useState({})
 
   useEffect(() => {
     const getRestaurants = async () => {
@@ -34,6 +37,11 @@ const App = () => {
     }
   }
 
+  const chooseRestaurant = (selected) => {
+    setSelectedRestaurant(selected)
+    navigate(`/restaurants/${selected._id}`)
+  }
+
   return (
     <div className="app">
       <header>
@@ -44,7 +52,7 @@ const App = () => {
           <Route index element={<Home toggleEmoji={toggleEmoji} anger={anger} />} />
           <Route
             path="/restaurants"
-            element={<RestaurantList restaurants={restaurants} />}
+            element={<RestaurantList restaurants={restaurants} chooseRestaurant={chooseRestaurant} />}
           />
           <Route path="/add" element={<RestaurantForm />} />
           <Route
@@ -53,7 +61,7 @@ const App = () => {
           />
           <Route
             path="/restaurants/:restaurantId"
-            element={<RestaurantDetails />}
+            element={<RestaurantDetails selectedRestaurant={selectedRestaurant} />}
           />
           <Route
             path="/restaurants/:restaurantId/review"
