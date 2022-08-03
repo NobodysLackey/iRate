@@ -9,14 +9,11 @@ const Nav = () => {
       </div>
       <div className='nav-links'>
         <NavLink to="/" className={({ isActive }) =>
-          isActive ? "active" : undefined
-        }>Home</NavLink>
+          isActive ? "active" : undefined}>Home</NavLink>
         <NavLink to="/restaurants" className={({ isActive }) =>
-          isActive ? "active" : undefined
-        }>Restaurants</NavLink>
+          isActive ? "active" : undefined}>Restaurants</NavLink>
         <NavLink to="/add" className={({ isActive }) =>
-          isActive ? "active" : undefined
-        }>Add A Restaurant</NavLink>
+          isActive ? "active" : undefined}>Add A Restaurant</NavLink>
       </div>
     </nav>
   )
