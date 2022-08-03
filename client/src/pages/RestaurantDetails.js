@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 import ReviewCard from '../components/ReviewCard'
 
-const RestaurantDetails = ({ selectedRestaurant, deleteReview }) => {
+const RestaurantDetails = ({ selectedRestaurant, editReview, deleteReview, newReview }) => {
 
   return (
     <section className="page">
@@ -17,7 +17,7 @@ const RestaurantDetails = ({ selectedRestaurant, deleteReview }) => {
           <h1>{selectedRestaurant.location}</h1>
           <div className="reviews">
             <h1>Reviews</h1>
-            <Link to={`/restaurants/${selectedRestaurant._id}/review`} >Write A Review</Link>
+            <button onClick={newReview}>Write A Review</button>
             {(selectedRestaurant.reviews.length === 0) ? (
               <h3>No Reviews Yet!</h3>
               ):(
@@ -27,6 +27,7 @@ const RestaurantDetails = ({ selectedRestaurant, deleteReview }) => {
                     key={review._id}
                     review={review}
                     deleteReview={deleteReview}
+                    editReview={editReview}
                     index={index}
                   />
                 ))}

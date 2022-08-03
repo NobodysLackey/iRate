@@ -26,6 +26,7 @@ const App = () => {
   const [restaurants, setRestaurants] = useState([])
   const [selectedRestaurant, setSelectedRestaurant] = useState(null)
   const [formState, setFormState] = useState(initialFormState)
+  const [editing, setEditing] = useState(false)
 
   const getRestaurants = async () => {
     const res = await axios.get(`${BASE_URL}/api/restaurants`)
@@ -63,20 +64,49 @@ const App = () => {
     setFormState({ ...formState, [event.target.name]: event.target.value })
   }
 
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-
+  const createNewReview = async () => {
     let response = await axios.post(`${BASE_URL}/api/restaurants/${selectedRestaurant._id}/reviews`, { ...formState, restaurant: selectedRestaurant._id })
-
-    await getRestaurants()
-
+    
     let modifiedRestaurant = selectedRestaurant
     modifiedRestaurant.reviews.push(response.data)
     setSelectedRestaurant(modifiedRestaurant)
+  }
+
+  const updateReview = async (index) => {
+    let response = await axios.put(`${BASE_URL}/api/reviews/${formState._id}`, formState)
+    
+    let modifiedRestaurant = selectedRestaurant
+    modifiedRestaurant.reviews.splice(index, 1, response.data)
+    setSelectedRestaurant(modifiedRestaurant)
+  }
+
+  const handleSubmit = async (event, index) => {
+    event.preventDefault()
+
+    if(!editing) {
+      await createNewReview()
+    } else {
+      await updateReview(index)
+    }
+
+    await getRestaurants()
 
     setFormState(initialFormState)
+    setEditing(false)
     
     navigate(`/restaurants/${selectedRestaurant._id}`)
+  }
+
+  const editReview = (review, index) => {
+    setFormState(review)
+    setEditing(true)
+    navigate(`/restaurants/${selectedRestaurant._id}/review`, {state: {index: index}})
+  }
+
+  const newReview = () => {
+    setFormState(initialFormState)
+    setEditing(false)
+    navigate(`/restaurants/${selectedRestaurant._id}/review`)
   }
 
   return (
@@ -98,7 +128,7 @@ const App = () => {
           />
           <Route
             path="/restaurants/:restaurantId"
-            element={<RestaurantDetails selectedRestaurant={selectedRestaurant} deleteReview={deleteReview} />}
+            element={<RestaurantDetails selectedRestaurant={selectedRestaurant} deleteReview={deleteReview} editReview={editReview} newReview={newReview} />}
           />
           <Route
             path="/restaurants/:restaurantId/review"

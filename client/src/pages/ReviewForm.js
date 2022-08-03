@@ -1,9 +1,12 @@
+import { useLocation } from "react-router-dom"
+
 const ReviewForm = ({ handleChange, handleSubmit, formState }) => {
+  let location = useLocation()
 
   return (
     <section className="page">
       <h1>Review Form</h1>
-      <form onSubmit={handleSubmit} className="review-form">
+      <form onSubmit={(e) => handleSubmit(e, location.state.index)} className="review-form">
         <input value={formState.title} type="text" name="title" placeholder="Review Title" onChange={handleChange} required />
         <input value={formState.body} type="text" name="body" placeholder="Your Review" onChange={handleChange} required />
         <input value={formState.name} type="text" name="name" placeholder="Your Name" onChange={handleChange} required />
