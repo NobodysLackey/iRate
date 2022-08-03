@@ -17,7 +17,7 @@ const App = () => {
 
   const [anger, setAnger] = useState("😠")
   const [restaurants, setRestaurants] = useState([])
-  const [selectedRestaurant, setSelectedRestaurant] = useState({})
+  const [selectedRestaurant, setSelectedRestaurant] = useState(null)
 
   useEffect(() => {
     const getRestaurants = async () => {
