@@ -216,6 +216,10 @@ nav {
   border-bottom: 1px solid black;
 }
 
+.review-top > h3 > span {
+  filter: grayscale(100%);
+}
+
 .review-top > h4 {
   grid-area: 1 / 2;
 }
