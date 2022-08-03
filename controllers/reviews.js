@@ -7,8 +7,7 @@ const getAllReviews = async (req, res) => {
 
 const createReview = async (req, res) => {
     let restaurant = await Restaurant.findById(req.params.id)
-    let reviewBody = { ...req.body, restaurant: req.params.id }
-    let newReview = await Review.create(reviewBody)
+    let newReview = await Review.create(req.body)
     
     restaurant.reviews.push(newReview._id)
     restaurant.save()

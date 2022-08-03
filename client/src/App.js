@@ -15,15 +15,17 @@ import Home from './pages/Home'
 const App = () => {
   let navigate = useNavigate()
 
-  const [anger, setAnger] = useState("😠")
-  const [restaurants, setRestaurants] = useState([])
-  const [selectedRestaurant, setSelectedRestaurant] = useState(null)
-  const [formState, setFormState] = useState({
+  let initialFormState = {
     title: '',
     name: '',
     body: '',
     rating: ''
-  })
+  }
+
+  const [anger, setAnger] = useState("😠")
+  const [restaurants, setRestaurants] = useState([])
+  const [selectedRestaurant, setSelectedRestaurant] = useState(null)
+  const [formState, setFormState] = useState(initialFormState)
 
   const getRestaurants = async () => {
     const res = await axios.get(`${BASE_URL}/api/restaurants`)
@@ -63,12 +65,16 @@ const App = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    await axios.post(`${BASE_URL}/api/restaurants/${selectedRestaurant._id}/reviews`, formState)
+
+    let response = await axios.post(`${BASE_URL}/api/restaurants/${selectedRestaurant._id}/reviews`, { ...formState, restaurant: selectedRestaurant._id })
+
     await getRestaurants()
 
     let modifiedRestaurant = selectedRestaurant
-    modifiedRestaurant.reviews.push(formState)
+    modifiedRestaurant.reviews.push(response.data)
     setSelectedRestaurant(modifiedRestaurant)
+
+    setFormState(initialFormState)
     
     navigate(`/restaurants/${selectedRestaurant._id}`)
   }
