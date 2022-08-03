@@ -18,12 +18,19 @@ const App = () => {
   const [anger, setAnger] = useState("😠")
   const [restaurants, setRestaurants] = useState([])
   const [selectedRestaurant, setSelectedRestaurant] = useState(null)
+  const [formState, setFormState] = useState({
+    title: '',
+    name: '',
+    body: '',
+    rating: ''
+  })
+
+  const getRestaurants = async () => {
+    const res = await axios.get(`${BASE_URL}/api/restaurants`)
+    setRestaurants(res.data)
+  }
 
   useEffect(() => {
-    const getRestaurants = async () => {
-      const res = await axios.get(`${BASE_URL}/api/restaurants`)
-      setRestaurants(res.data)
-    }
     getRestaurants()
   }, [])
 
@@ -40,6 +47,30 @@ const App = () => {
   const chooseRestaurant = (selected) => {
     setSelectedRestaurant(selected)
     navigate(`/restaurants/${selected._id}`)
+  }
+
+  const deleteReview = async (reviewId, index) => {
+    await axios.delete(`${BASE_URL}/api/reviews/${reviewId}`)
+    await getRestaurants()
+    let modifiedRestaurant = selectedRestaurant
+    modifiedRestaurant.reviews.splice(index, 1)
+    setSelectedRestaurant(modifiedRestaurant)
+  }
+
+  const handleChange = (event) => {
+    setFormState({ ...formState, [event.target.name]: event.target.value })
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    await axios.post(`${BASE_URL}/api/restaurants/${selectedRestaurant._id}/reviews`, formState)
+    await getRestaurants()
+
+    let modifiedRestaurant = selectedRestaurant
+    modifiedRestaurant.reviews.push(formState)
+    setSelectedRestaurant(modifiedRestaurant)
+    
+    navigate(`/restaurants/${selectedRestaurant._id}`)
   }
 
   return (
@@ -61,11 +92,11 @@ const App = () => {
           />
           <Route
             path="/restaurants/:restaurantId"
-            element={<RestaurantDetails selectedRestaurant={selectedRestaurant} />}
+            element={<RestaurantDetails selectedRestaurant={selectedRestaurant} deleteReview={deleteReview} />}
           />
           <Route
             path="/restaurants/:restaurantId/review"
-            element={<ReviewForm />}
+            element={<ReviewForm formState={formState} handleChange={handleChange} handleSubmit={handleSubmit} />}
           />
         </Routes>
       </main>

@@ -1,4 +1,4 @@
-const ReviewCard = ({ review }) => {
+const ReviewCard = ({ review, deleteReview, index }) => {
 
   return (
     <div className="review-card">
@@ -6,6 +6,7 @@ const ReviewCard = ({ review }) => {
       <p>{review.body}</p>
       <h4>{review.name}</h4>
       <h3>{review.rating}</h3>
+      <button onClick={() => deleteReview(review._id, index)}>X</button>
     </div>
   )
 }
