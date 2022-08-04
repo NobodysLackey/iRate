@@ -3,10 +3,36 @@
   padding: 0;
 }
 
+body {
+  background-color: #b3b3b3;
+}
+
 .app {
   text-align: center;
   height: 100vh;
   font-family: 'Nanum Brush Script', cursive;
+}
+
+.title {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50vh;
+}
+
+.details > h1 {
+  margin: 30px;
+}
+
+.no-reviews {
+  color: #eb4d01;
+  margin-bottom: 40px;
+  font-size: 30px;
 }
 
 div > a {
@@ -16,6 +42,10 @@ div > a {
 
 img {
   max-width: 80vw;
+  border: 2px solid black;
+  box-shadow: 10px 10px 5px #969696;
+  border-radius: 15px;
+  max-height: 35vh;
 }
 
 button {
@@ -23,7 +53,7 @@ button {
   font-size: 20px;
   color: white;
   background-color: #e97b00;
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 4px;
   padding: 0px 5px 0px 5px;
   cursor: pointer;
@@ -32,7 +62,7 @@ button {
 
 button:hover {
   background-color: #ffcc00;
-  border: 1px solid #eb4d01;
+  border: 2px solid #eb4d01;
   color: black;
 }
 
@@ -111,6 +141,7 @@ nav {
 #home-logo {
   font-family: 'Frijole', cursive;
   font-size: 30px;
+  color: #eb4d01;
 }
 
 .restaurant-card {
@@ -152,11 +183,16 @@ nav {
   max-width: 500px;
   height: 20vh;
   min-height: 100px;
-  margin: 15px;
+  margin: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+.review-card > p {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .reviews {
@@ -164,6 +200,7 @@ nav {
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
+  padding-bottom: 40px;
 }
 
 .review-form {
@@ -172,8 +209,21 @@ nav {
   align-items: center;
 }
 
+.review-form > * {
+  margin: 5px;
+  text-align: center;
+  font-size: 25px;
+  border-radius: 15px;
+}
+
+.review-form > div > * {
+  text-align: center;
+  font-size: 25px;
+  border-radius: 15px;
+}
+
 .review-top {
-  background-color: #efefef;
+  background-color: #dedede;
   width: 100%;
   border-radius: 15px 15px 0px 0px;
 
@@ -196,9 +246,10 @@ nav {
   grid-area: 1 / 3;
   border-radius: 13px 0px 13px 0px;
   margin-right: 0;
-  border-top: 1px solid black;
+  font-size: 20px;
+  border-top: 2px solid black;
   border-right: none;
-  border-left: 1px solid black;
+  border-left: 2px solid black;
   border-bottom: none;
 }
 
@@ -210,10 +261,21 @@ nav {
   grid-area: 1 / 3;
   border-radius: 0px 13px 0px 13px;
   margin-right: 0;
+  font-size: 30px;
   border-top: none;
   border-right: none;
-  border-left: 1px solid black;
-  border-bottom: 1px solid black;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.review-top > button:hover {
+  border-left: 2px solid #eb4d01;
+  border-bottom: 2px solid #eb4d01;
+}
+
+.review-bottom > button:hover {
+  border-top: 2px solid #eb4d01;
+  border-left: 2px solid #eb4d01;
 }
 
 .review-top > h3 > span {
@@ -233,4 +295,18 @@ nav {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+}
+
+textarea {
+  width: 50vw;
+  font-family: 'Nanum Brush Script', cursive;
+}
+
+input {
+  font-family: 'Nanum Brush Script', cursive;
+  margin: 5px;
+}
+
+select {
+  font-family: 'Nanum Brush Script', cursive;
 }

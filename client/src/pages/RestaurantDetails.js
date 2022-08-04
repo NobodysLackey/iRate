@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom'
-
 import ReviewCard from '../components/ReviewCard'
 
 const RestaurantDetails = ({ selectedRestaurant, editReview, deleteReview, newReview }) => {
@@ -12,16 +10,21 @@ const RestaurantDetails = ({ selectedRestaurant, editReview, deleteReview, newRe
         </div>
         ) : (
         <div>
-          <h1>{selectedRestaurant.name}</h1>
-          <img src={selectedRestaurant.photo_url} alt={selectedRestaurant.name} />
-          <h1>{selectedRestaurant.location}</h1>
+          <div className="details">
+            <h1 className='title'>{selectedRestaurant.name}</h1>
+            <img src={selectedRestaurant.photo_url} alt={selectedRestaurant.name} />
+            <h1>{selectedRestaurant.location}</h1>
+          </div>
           <div className="reviews">
-            <h1>Reviews</h1>
-            <button onClick={newReview}>Write A Review</button>
+            <h1 className='title'>Reviews</h1>
             {(selectedRestaurant.reviews.length === 0) ? (
-              <h3>No Reviews Yet!</h3>
+              <div>
+                <h3 className='no-reviews'>No Reviews Yet!</h3>
+                <button onClick={newReview}>Write A Review</button>
+              </div>
               ):(
               <div>
+                <button onClick={newReview}>Write A Review</button>
                 {selectedRestaurant.reviews.map((review, index) => (
                   <ReviewCard
                     key={review._id}
