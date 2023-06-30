@@ -310,3 +310,9 @@ input {
 select {
   font-family: 'Nanum Brush Script', cursive;
 }
+
+.reviews-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

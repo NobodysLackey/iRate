@@ -1,35 +1,34 @@
-# iRate
+![iRate](client/public/images/banner.png)
 
-## Date: 8/1/2022
+### Date: 6/30/2023
 
-### By: Ben Manning, Michael Lackey, a huge group of motivated students
-#### [GitHub](https://github.com/SEI-R-6-21)
+#### By: Michael Lackey
+
+#### [Website](https://michaellackey.com/) | [GitHub](https://github.com/NobodysLackey) | [LinkedIn](https://www.linkedin.com/in/michaelglackey/)
 ***
 
 ### ***Description***
 
-##### iRate is an application for reviewing restaurants. It was created in two and a half days as part of the SEI-R-6-21 at General Assembly as a group learning project.
+##### A restaurant reviews application to showcase a full stack MERN app to students.
+
 ***
 
 ### ***Technologies Used***
 
-- MongoDB / Mongoose
-- Node / Express
-- React
+![Technologies Used](client/public/images/tech-banner.png)
 ***
 
 ### ***Getting Started***
 
-##### `Fork` and `Clone` the project and then connect your mongoDB database via a connection string in a `.env` file on the backend.
-##### Run `npm run dev` to spin up the backend server. Navigate to the client directory and run `npm start` to spin up the frontend.
-##### Or, if you want to get right into it, the project was deployed using Heroku and can be viewed [here]().
+##### Use the NavBar to navigate throughout the application to see a list of all restaurants. Click on each to see it's details as well as leave a review.
+
 ***
 
 ### ***Screenshots***
 
 <div align="center">
   <pre>
-    <img src="/photos/erd.png" height="300" />&nbsp;&nbsp;&nbsp;<img src="photos/component-hierarchy.png" height="300" />&nbsp;&nbsp;&nbsp;<img src="" height="300" />
+    <img src="client/public/images/home.png" height="500" />&nbsp;&nbsp;&nbsp;<img src="client/public/images/restaurants.png" height="500" />&nbsp;&nbsp;&nbsp;<img src="client/public/images/detail.png" height="500" />&nbsp;&nbsp;&nbsp;<img src="client/public/images/form.png" height="500" />
   </pre>
 </div>
 
@@ -37,6 +36,15 @@
 
 ### ***Future Updates***
 
-- [x] ~~Something complete~~
-- [ ] Something we haven't done yet
+- [ ] Make the app scale for multiple sized screens
+- [ ] More fleshed out details page
+- [ ] Search functionality
+- [ ] Deployment
+
+***
+
+### ***Credits***
+
+- Express Backend: [Ben Manning](https://github.com/ben-manning)
+
 ***
