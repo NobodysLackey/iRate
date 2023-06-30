@@ -28,7 +28,7 @@
 
 <div align="center">
   <pre>
-    <img src="client/public/images/home.png" height="500" />&nbsp;&nbsp;&nbsp;<img src="client/public/images/restaurants.png" height="500" />&nbsp;&nbsp;&nbsp;<img src="client/public/images/detail.png" height="500" />&nbsp;&nbsp;&nbsp;<img src="client/public/images/form.png" height="500" />
+    <img src="client/public/images/home.png" width="500" />&nbsp;&nbsp;&nbsp;<img src="client/public/images/restaurants.png" width="500" />&nbsp;&nbsp;&nbsp;<img src="client/public/images/detail.png" width="500" />&nbsp;&nbsp;&nbsp;<img src="client/public/images/form.png" width="500" />
   </pre>
 </div>
 
