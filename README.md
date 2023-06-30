@@ -11,6 +11,8 @@
 
 ##### A restaurant reviews application to showcase a full stack MERN app to students.
 
+##### The project was deployed and can be viewed [here](https://irate.surge.sh/).
+
 ***
 
 ### ***Technologies Used***
@@ -36,10 +38,11 @@
 
 ### ***Future Updates***
 
+- [ ] Deploy backend
+- [ ] Add a Restaurant
+- [ ] Search functionality
 - [ ] Make the app scale for multiple sized screens
 - [ ] More fleshed out details page
-- [ ] Search functionality
-- [ ] Deployment
 
 ***
 
