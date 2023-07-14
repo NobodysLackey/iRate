@@ -131,6 +131,9 @@ nav {
   background-color: #b3b3b3;
   height: 88vh;
   padding-top: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .home > h1 {
@@ -203,13 +206,13 @@ nav {
   padding-bottom: 40px;
 }
 
-.review-form {
+.review-form, .add-form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.review-form > * {
+.review-form > *, .add-form > * {
   margin: 5px;
   text-align: center;
   font-size: 25px;
@@ -315,4 +318,23 @@ select {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+/* .add-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+} */
+
+.add-form > input {
+  width: 200px;
+  margin: 10px;
+  text-align: center;
+}
+
+.add-form > button {
+  width: 75px;
+  margin: 10px;
 }

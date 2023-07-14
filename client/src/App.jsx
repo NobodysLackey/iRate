@@ -121,7 +121,7 @@ const App = () => {
             path="/restaurants"
             element={<RestaurantList restaurants={restaurants} chooseRestaurant={chooseRestaurant} />}
           />
-          <Route path="/add" element={<RestaurantForm />} />
+          <Route path="/add" element={<RestaurantForm restaurants={restaurants} setRestaurants={setRestaurants} />} />
           <Route
             path="/restaurants/:restaurantId/review/:reviewId"
             element={<ReviewDetails />}
