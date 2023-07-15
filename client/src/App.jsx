@@ -10,6 +10,7 @@ import RestaurantList from './pages/RestaurantList'
 import RestaurantForm from './pages/RestaurantForm'
 import ReviewDetails from './pages/ReviewDetails'
 import ReviewForm from './pages/ReviewForm'
+import Footer from './components/Footer'
 import Register from './pages/Register'
 import SignIn from './pages/SignIn'
 import Nav from './components/Nav'
@@ -191,10 +192,11 @@ const App = () => {
               />
             }
           />
-          <Route path="/signin" element={<SignIn setUser={setUser} />} />
+          <Route path="/signin" element={<SignIn setUser={setUser} toggleEmoji={toggleEmoji} anger={anger} />} />
           <Route path="/register" element={<Register />} />
         </Routes>
       </main>
+      <Footer toggleEmoji={toggleEmoji} anger={anger} />
     </div>
   )
 }

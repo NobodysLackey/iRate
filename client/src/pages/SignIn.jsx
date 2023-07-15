@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { SignInUser } from '../services/Auth'
+import { SignInUser } from '../services/auth'
 import { useNavigate } from 'react-router-dom'
 
-const SignIn = ({ setUser }) => {
+const SignIn = ({ setUser, toggleEmoji, anger }) => {
   let navigate = useNavigate()
 
   const [formValues, setFormValues] = useState({ email: '', password: '' })
@@ -21,6 +21,7 @@ const SignIn = ({ setUser }) => {
 
   return (
     <section className="page">
+      <h2>Sign In to start putting that rage to good use!</h2>
       <form className="login-form" onSubmit={handleSubmit}>
         <input
           onChange={handleChange}
@@ -41,6 +42,8 @@ const SignIn = ({ setUser }) => {
           Sign In
         </button>
       </form>
+      <span id="emoji" onClick={toggleEmoji}>{anger}</span>
+      <h1>This place is the worst!</h1>
     </section>
   )
 }

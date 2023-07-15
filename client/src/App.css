@@ -98,6 +98,18 @@ nav {
   justify-content: space-around;
 }
 
+footer {
+  background-color: #e97b00;
+  color: #ffffff;
+  height: 5vh;
+  padding-left: 2vw;
+  font-size: 2vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 .nav-links {
   width: 75vw;
   display: flex;
@@ -131,7 +143,7 @@ nav {
 
 .page {
   background-color: #b3b3b3;
-  height: 88vh;
+  height: 83vh;
   padding-top: 2vh;
   display: flex;
   flex-direction: column;
@@ -147,6 +159,22 @@ nav {
   font-family: 'Frijole', cursive;
   font-size: 30px;
   color: #eb4d01;
+}
+
+#footer-logo {
+  font-family: 'Frijole', cursive;
+  font-size: 20px;
+  color: #eb4d01;
+  text-decoration: none;
+}
+
+#footer-logo:hover {
+  color: #ffcc00;
+  cursor: pointer;
+}
+
+#footer-face {
+  cursor: pointer;
 }
 
 .restaurant-card {
@@ -208,8 +236,8 @@ nav {
   padding-bottom: 40px;
 }
 
-.register-form {
-  margin-top: 5vh;
+.register-form, .login-form {
+  margin: 5vh 0 5vh 0;
 }
 
 .review-form,
