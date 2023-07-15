@@ -148,6 +148,24 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: auto;
+}
+
+.page::-webkit-scrollbar {
+  width: 15px;
+}
+
+.page::-webkit-scrollbar-track {
+  background: lightgray;
+}
+
+.page::-webkit-scrollbar-thumb {
+  background: #e97b00;
+  border-radius: 10px;
+}
+
+.page::-webkit-scrollbar-thumb:hover {
+  background: #ffcc00;
 }
 
 .home > h1 {
