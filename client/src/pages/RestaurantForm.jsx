@@ -1,12 +1,12 @@
 import Client from '../services/api'
-import { BASE_URL } from '../globals'
+import { BASE_URL, STATES } from '../globals'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const RestaurantForm = ({ restaurants, setRestaurants }) => {
   let navigate = useNavigate()
 
-  const initialState = { name: '', location: '', photo_url: '' }
+  const initialState = { name: '', city: '', state: '', photo_url: '' }
 
   const [formValues, setFormValues] = useState(initialState)
 
@@ -28,17 +28,37 @@ const RestaurantForm = ({ restaurants, setRestaurants }) => {
         <input
           type="text"
           name="name"
-          placeholder="Name"
+          placeholder="Restaurant Name"
           value={formValues.name}
           onChange={handleChange}
         />
-        <input
-          type="text"
-          name="location"
-          placeholder="Location"
-          value={formValues.location}
-          onChange={handleChange}
-        />
+        <div className="location-select">
+          <input
+            onChange={handleChange}
+            name="city"
+            type="text"
+            placeholder="City"
+            value={formValues.city}
+            required
+          />
+          <select
+            onChange={handleChange}
+            name="state"
+            placeholder="State"
+            value={formValues.state}
+            required
+          >
+            <option value="" disabled>
+              {' '}
+              State &gt;{' '}
+            </option>
+            {STATES.map((state) => (
+              <option key={state} value={state}>
+                {state}
+              </option>
+            ))}
+          </select>
+        </div>
         <input
           type="text"
           name="photo_url"

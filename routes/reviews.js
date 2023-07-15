@@ -9,12 +9,6 @@ router.get(
   middleware.verifyToken,
   reviews.getReview
 )
-router.post(
-  '/:id',
-  middleware.stripToken,
-  middleware.verifyToken,
-  reviews.createReview
-)
 router.put(
   '/:id',
   middleware.stripToken,

@@ -1,17 +1,8 @@
-const { Review, Restaurant } = require('../models')
+const { Review } = require('../models')
 
 const getAllReviews = async (req, res) => {
   let allReviews = await Review.find({})
   res.send(allReviews)
-}
-
-const createReview = async (req, res) => {
-  let restaurant = await Restaurant.findById(req.params.id)
-  let newReview = await Review.create(req.body)
-
-  restaurant.reviews.push(newReview._id)
-  restaurant.save()
-  res.send(newReview)
 }
 
 const getReview = async (req, res) => {
@@ -33,7 +24,6 @@ const deleteReview = async (req, res) => {
 
 module.exports = {
   getAllReviews,
-  createReview,
   getReview,
   updateReview,
   deleteReview

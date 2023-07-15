@@ -21,7 +21,6 @@ const App = () => {
 
   let initialFormState = {
     title: '',
-    name: '',
     body: '',
     rating: ''
   }
@@ -80,7 +79,7 @@ const App = () => {
   const createNewReview = async () => {
     let response = await Client.post(
       `${BASE_URL}/restaurants/${selectedRestaurant._id}`,
-      { ...formState, restaurant: selectedRestaurant._id }
+      { ...formState, restaurant: selectedRestaurant._id, user: user._id, name: user.firstName }
     )
 
     let modifiedRestaurant = selectedRestaurant
@@ -179,6 +178,7 @@ const App = () => {
                 deleteReview={deleteReview}
                 editReview={editReview}
                 newReview={newReview}
+                user={user}
               />
             }
           />

@@ -56,7 +56,7 @@ const Register = () => {
         Join <span id="home-logo">iRate</span> and do something about it!
       </h2>
       <form className="register-form" onSubmit={handleSubmit}>
-        <div className="input-row">
+        <div>
           <input
             onChange={handleChange}
             name="firstName"
@@ -74,7 +74,7 @@ const Register = () => {
             required
           />
         </div>
-        <div className="input-row">
+        <div>
           <input
             onChange={handleChange}
             name="city"
@@ -101,7 +101,7 @@ const Register = () => {
             ))}
           </select>
         </div>
-        <div className="input-row">
+        <div>
           <input
             onChange={handleChange}
             name="email"
@@ -111,7 +111,7 @@ const Register = () => {
             required
           />
         </div>
-        <div className="input-row">
+        <div>
           <input
             onChange={handleChange}
             name="password"

@@ -4,7 +4,8 @@ const RestaurantDetails = ({
   selectedRestaurant,
   editReview,
   deleteReview,
-  newReview
+  newReview,
+  user
 }) => {
   return (
     <section className="page">
@@ -20,18 +21,18 @@ const RestaurantDetails = ({
               src={selectedRestaurant.photo_url}
               alt={selectedRestaurant.name}
             />
-            <h1>{selectedRestaurant.location}</h1>
+            <h1>{selectedRestaurant.city}, {selectedRestaurant.state}</h1>
           </div>
           <div className="reviews">
             <h1 className="title">Reviews</h1>
             {selectedRestaurant.reviews.length === 0 ? (
               <div>
                 <h3 className="no-reviews">No Reviews Yet!</h3>
-                <button onClick={newReview}>Write A Review</button>
+                {user ? <button onClick={newReview}>Write A Review</button> : null}
               </div>
             ) : (
               <div>
-                <button onClick={newReview}>Write A Review</button>
+                {user ? <button onClick={newReview}>Write A Review</button> : null}
                 <div className='reviews-flex'>
                   {selectedRestaurant.reviews.map((review, index) => (
                     <ReviewCard
@@ -40,6 +41,7 @@ const RestaurantDetails = ({
                       deleteReview={deleteReview}
                       editReview={editReview}
                       index={index}
+                      user={user}
                     />
                   ))}
                 </div>

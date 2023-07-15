@@ -22,15 +22,6 @@ const ReviewForm = ({ handleChange, handleSubmit, formState }) => {
             required
             autoComplete="off"
           />
-          <input
-            value={formState.name}
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            onChange={handleChange}
-            required
-            autoComplete="off"
-          />
         </div>
         <textarea
           columns="50"
@@ -59,7 +50,7 @@ const ReviewForm = ({ handleChange, handleSubmit, formState }) => {
           <option value={4}>🙂</option>
           <option value={5}>🤤</option>
         </select>
-        <button>Submit</button>
+        <button type="submit">Rate</button>
       </form>
     </section>
   )
