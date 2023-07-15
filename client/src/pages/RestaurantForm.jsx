@@ -1,4 +1,5 @@
-import axios from 'axios'
+import Client from '../services/api'
+import { BASE_URL } from '../globals'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -11,7 +12,7 @@ const RestaurantForm = ({ restaurants, setRestaurants }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    let response = await axios.post('http://localhost:3001/api/restaurants', formValues)
+    let response = await Client.post(`${BASE_URL}/restaurants`, formValues)
     setRestaurants([...restaurants, response.data])
     navigate('/restaurants')
   }

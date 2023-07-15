@@ -1,8 +1,45 @@
 import { NavLink, Link } from 'react-router-dom'
 
-const Nav = () => {
+const Nav = ({ user, handleLogOut }) => {
+  let userOptions
+  if (user) {
+    userOptions = (
+      <>
+        <NavLink
+          to="/add"
+          className={({ isActive }) => (isActive ? 'active' : undefined)}
+        >
+          Add A Restaurant
+        </NavLink>
+        <Link
+          onClick={handleLogOut}
+          to="/"
+        >
+          Sign Out
+        </Link>
+      </>
+    )
+  }
+
+  const publicOptions = (
+    <>
+      <NavLink
+        to="/register"
+        className={({ isActive }) => (isActive ? 'active' : undefined)}
+      >
+        Register
+      </NavLink>
+      <NavLink
+        to="/signin"
+        className={({ isActive }) => (isActive ? 'active' : undefined)}
+      >
+        Sign In
+      </NavLink>
+    </>
+  )
+
   return (
-    <nav className="flex-row">
+    <nav>
       <div id="logo">
         <Link to="/">iRate</Link>
       </div>
@@ -19,12 +56,8 @@ const Nav = () => {
         >
           Restaurants
         </NavLink>
-        <NavLink
-          to="/add"
-          className={({ isActive }) => (isActive ? 'active' : undefined)}
-        >
-          Add A Restaurant
-        </NavLink>
+
+        {user ? userOptions : publicOptions}
       </div>
     </nav>
   )

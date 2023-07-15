@@ -67,14 +67,15 @@ button:hover {
 }
 
 .nav-links > a {
-  font-size: 3vh;
+  font-size: 2.5vh;
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.nav-links > a, #logo > a {
+.nav-links > a,
+#logo > a {
   color: #ffffff;
   text-decoration: none;
   width: 25vw;
@@ -82,7 +83,8 @@ button:hover {
   user-select: none;
 }
 
-.nav-links > a:hover, #logo > a:hover {
+.nav-links > a:hover,
+#logo > a:hover {
   color: #ffcc00;
 }
 
@@ -99,7 +101,7 @@ nav {
 .nav-links {
   width: 75vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   font-size: 30px;
   text-decoration: none;
@@ -107,7 +109,7 @@ nav {
 }
 
 .active {
-  background-color:#e97b00;
+  background-color: #e97b00;
   box-shadow: 0 8px 8px -4px rgb(113, 113, 113);
 }
 
@@ -120,7 +122,7 @@ nav {
   padding: 20px;
 }
 
-#emoji  {
+#emoji {
   font-size: 200px;
   cursor: pointer;
   text-decoration: none;
@@ -167,7 +169,7 @@ nav {
 }
 
 .restaurant-card:hover {
-  background-color:#ffcc00;
+  background-color: #ffcc00;
   border: 2px #eb4d01 solid;
   border-radius: 15px;
 
@@ -206,13 +208,29 @@ nav {
   padding-bottom: 40px;
 }
 
-.review-form, .add-form {
+.register-form {
+  margin-top: 5vh;
+}
+
+.review-form,
+.add-form,
+.register-form,
+.login-form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.review-form > *, .add-form > * {
+.review-form > *,
+.add-form > *,
+.login-form > * {
+  margin: 5px;
+  text-align: center;
+  font-size: 25px;
+  border-radius: 15px;
+}
+
+.register-form > div > * {
   margin: 5px;
   text-align: center;
   font-size: 25px;
@@ -223,6 +241,19 @@ nav {
   text-align: center;
   font-size: 25px;
   border-radius: 15px;
+}
+
+.review-form > select {
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+}
+
+.review-form > textarea {
+  border-width: 2px;
+  border-style: inset;
+  border-color: rgb(118, 118, 118);
+  border-image: initial;
 }
 
 .review-top {
@@ -305,13 +336,37 @@ textarea {
   font-family: 'Nanum Brush Script', cursive;
 }
 
-input {
+input,
+select {
   font-family: 'Nanum Brush Script', cursive;
   margin: 5px;
 }
 
 select {
-  font-family: 'Nanum Brush Script', cursive;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  border-width: 2px;
+  border-style: inset;
+  border-color: rgb(118, 118, 118);
+  border-image: initial;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select:required:invalid {
+  color: gray;
+}
+
+option[value=''][disabled] {
+  display: none;
+}
+
+option {
+  color: black;
 }
 
 .reviews-flex {
@@ -320,21 +375,32 @@ select {
   justify-content: center;
 }
 
-/* .add-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 400px;
-} */
-
-.add-form > input {
+.add-form > input,
+.login-form > input {
   width: 200px;
   margin: 10px;
   text-align: center;
 }
 
-.add-form > button {
+.register-form > div > input {
+  width: 200px;
+  margin: 10px;
+  text-align: center;
+}
+
+.register-form > div > select {
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+}
+
+.add-form > button,
+.register-form > button,
+.login-form > button {
   width: 75px;
   margin: 10px;
+}
+
+.register-msg {
+  width: 75vw;
 }
