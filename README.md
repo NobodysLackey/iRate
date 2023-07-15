@@ -39,8 +39,8 @@
 ### ***Future Updates***
 
 - [ ] Deploy backend
-- [x] Add a Restaurant
-- [x] User Auth
+- [x] ~~Add a Restaurant~~
+- [x] ~~User Auth~~
 - [ ] Search / filter functionality for restaurants page
 - [ ] Pagination for restaurants page
 - [ ] Make the app scale for multiple sized screens
