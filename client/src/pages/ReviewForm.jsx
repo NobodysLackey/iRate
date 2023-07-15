@@ -11,6 +11,7 @@ const ReviewForm = ({ handleChange, handleSubmit, formState }) => {
       <form
         onSubmit={(e) => handleSubmit(e, locationIndex)}
         className="review-form"
+        autoComplete="off"
       >
         <div>
           <input
@@ -24,6 +25,7 @@ const ReviewForm = ({ handleChange, handleSubmit, formState }) => {
           />
         </div>
         <textarea
+          maxlength='250'
           columns="50"
           rows="5"
           value={formState.body}

@@ -39,10 +39,12 @@
 ### ***Future Updates***
 
 - [ ] Deploy backend
-- [ ] Add a Restaurant
-- [ ] Search functionality
+- [x] Add a Restaurant
+- [x] User Auth
+- [ ] Search / filter functionality for restaurants page
+- [ ] Pagination for restaurants page
 - [ ] Make the app scale for multiple sized screens
-- [ ] More fleshed out details page
+- [ ] More fleshed out details page / integrate Google Maps API
 
 ***
 

@@ -24,13 +24,14 @@ const RestaurantForm = ({ restaurants, setRestaurants }) => {
   return (
     <section className="page">
       <h1 className="title">Add A Restaurant</h1>
-      <form onSubmit={handleSubmit} className='add-form'>
+      <form onSubmit={handleSubmit} className='add-form' autoComplete="off">
         <input
           type="text"
           name="name"
           placeholder="Restaurant Name"
           value={formValues.name}
           onChange={handleChange}
+          autoComplete="off"
         />
         <div className="location-select">
           <input
@@ -40,6 +41,7 @@ const RestaurantForm = ({ restaurants, setRestaurants }) => {
             placeholder="City"
             value={formValues.city}
             required
+            autoComplete="off"
           />
           <select
             onChange={handleChange}
@@ -47,6 +49,7 @@ const RestaurantForm = ({ restaurants, setRestaurants }) => {
             placeholder="State"
             value={formValues.state}
             required
+            autoComplete="off"
           >
             <option value="" disabled>
               {' '}
@@ -65,6 +68,7 @@ const RestaurantForm = ({ restaurants, setRestaurants }) => {
           placeholder="Photo URL"
           value={formValues.photo_url}
           onChange={handleChange}
+          autoComplete="off"
         />
         <button type="submit">Add</button>
       </form>

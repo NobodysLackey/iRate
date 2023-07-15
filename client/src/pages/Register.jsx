@@ -55,7 +55,7 @@ const Register = () => {
       <h2 className="register-msg">
         Join <span id="home-logo">iRate</span> and do something about it!
       </h2>
-      <form className="register-form" onSubmit={handleSubmit}>
+      <form className="register-form" onSubmit={handleSubmit} autoComplete="off">
         <div>
           <input
             onChange={handleChange}
@@ -64,6 +64,7 @@ const Register = () => {
             placeholder="First Name"
             value={formValues.firstName}
             required
+            autoComplete="off"
           />
           <input
             onChange={handleChange}
@@ -72,6 +73,7 @@ const Register = () => {
             placeholder="Last Name"
             value={formValues.lastName}
             required
+            autoComplete="off"
           />
         </div>
         <div>
@@ -82,6 +84,7 @@ const Register = () => {
             placeholder="City"
             value={formValues.city}
             required
+            autoComplete="off"
           />
           <select
             onChange={handleChange}
@@ -89,6 +92,7 @@ const Register = () => {
             placeholder="State"
             value={formValues.state}
             required
+            autoComplete="off"
           >
             <option value="" disabled>
               {' '}
@@ -109,6 +113,7 @@ const Register = () => {
             placeholder="Email"
             value={formValues.email}
             required
+            autoComplete="off"
           />
         </div>
         <div>
@@ -119,6 +124,7 @@ const Register = () => {
             placeholder="Password"
             value={formValues.password}
             required
+            autoComplete="off"
           />
           <input
             onChange={handleChange}
@@ -127,6 +133,7 @@ const Register = () => {
             placeholder="Confirm Password"
             value={formValues.confirmPassword}
             required
+            autoComplete="off"
           />
         </div>
         <button type="submit">Get Mad</button>

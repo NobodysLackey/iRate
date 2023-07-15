@@ -102,12 +102,12 @@ footer {
   background-color: #e97b00;
   color: #ffffff;
   height: 5vh;
-  padding-left: 2vw;
+  padding: 0 2vw 0 2vw;
   font-size: 2vh;
 
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .nav-links {
@@ -181,7 +181,7 @@ footer {
 
 #footer-logo {
   font-family: 'Frijole', cursive;
-  font-size: 20px;
+  font-size: 35px;
   color: #eb4d01;
   text-decoration: none;
 }

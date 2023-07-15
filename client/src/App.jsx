@@ -196,7 +196,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
         </Routes>
       </main>
-      <Footer toggleEmoji={toggleEmoji} anger={anger} />
+      <Footer toggleEmoji={toggleEmoji} anger={anger} user={user} />
     </div>
   )
 }
