@@ -1,12 +1,15 @@
 {
-  "name": "restaurant-reviews-frontend",
-  "private": true,
+  "name": "iRate-frontend",
+  "author": "Michael Lackey",
+  "description": "A restaurant reviews application to showcase a full stack MERN app to students.",
   "version": "2.0.0",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://irate.surge.sh/",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cd dist && touch CNAME && echo 'https://irate.surge.sh/' >> CNAME && npx surge",
-    "preview": "vite preview"
+    "build": "vite build && cd dist && touch CNAME && echo 'https://irate.surge.sh/' >> CNAME && npx surge"
   },
   "dependencies": {
     "axios": "^1.4.0",

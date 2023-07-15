@@ -1,23 +1,19 @@
 {
-  "name": "u2_restaurant_reviews",
-  "version": "1.0.0",
-  "description": "",
+  "name": "iRate-backend",
+  "author": "Michael Lackey",
+  "description": "A restaurant reviews application to showcase a full stack MERN app to students.",
+  "version": "2.0.0",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://irate.surge.sh/",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node --watch server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SEI-R-6-21/u2_restaurant_reviews_app.git"
+    "url": "git+https://github.com/NobodysLackey/iRate.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/SEI-R-6-21/u2_restaurant_reviews_app/issues"
-  },
-  "homepage": "https://github.com/SEI-R-6-21/u2_restaurant_reviews_app#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
