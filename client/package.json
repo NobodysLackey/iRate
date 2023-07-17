@@ -7,7 +7,7 @@
   "private": true,
   "homepage": "https://irate.surge.sh/",
   "type": "module",
-  "proxy": "https://irate-backend.herokuapp.com",
+  "proxy": "https://irate-backend-a2b98033b686.herokuapp.com",
   "scripts": {
     "dev": "vite",
     "build": "vite build && cd dist && touch CNAME && echo 'https://irate.surge.sh/' >> CNAME && npx surge"
