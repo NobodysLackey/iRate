@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "node --watch server.js",
-    "build": "git push heroku main && cd client && npm run build"
+    "heroku": "git push heroku main && cd client && npm run build"
   },
   "repository": {
     "type": "git",
