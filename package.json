@@ -12,8 +12,7 @@
     "npm": "9.x"
   },
   "scripts": {
-    "dev": "node --watch server.js",
-    "build": "cd client && rm -rf dist && npm install && npx run build"
+    "dev": "node --watch server.js"
   },
   "repository": {
     "type": "git",
