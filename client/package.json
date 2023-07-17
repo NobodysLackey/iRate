@@ -7,6 +7,7 @@
   "private": true,
   "homepage": "https://irate.surge.sh/",
   "type": "module",
+  "proxy": "http://localhost:3001",
   "scripts": {
     "dev": "vite",
     "build": "vite build && cd dist && touch CNAME && echo 'https://irate.surge.sh/' >> CNAME && npx surge"
