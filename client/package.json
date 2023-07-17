@@ -10,7 +10,7 @@
   "proxy": "https://irate-backend-a2b98033b686.herokuapp.com",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cd dist && touch CNAME && echo 'https://irate.surge.sh/' >> CNAME && npx surge"
+    "build": "vite build && cd dist && touch CNAME && echo 'https://irate.surge.sh/' >> CNAME && npx surge --project ./path/to/project --domain irate.surge.sh"
   },
   "dependencies": {
     "axios": "^1.4.0",
