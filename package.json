@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "node --watch server.js",
-    "heroku": "git push heroku main && cd client && npm run build"
+    "heroku": "git push heroku main && cd client && vite build && cd dist && touch CNAME && echo 'https://irate.surge.sh/' >> CNAME && npx surge --project $PWD --domain irate.surge.sh"
   },
   "repository": {
     "type": "git",
