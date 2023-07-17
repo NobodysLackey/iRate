@@ -12,7 +12,7 @@
   },
   "scripts": {
     "dev": "node --watch server.js",
-    "build": "cd client && rm -rf dist && npm install && npx run build"
+    "build": "cd client && rm -rf dist && npm install && npm run build"
   },
   "repository": {
     "type": "git",
