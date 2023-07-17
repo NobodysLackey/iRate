@@ -7,6 +7,9 @@
   "private": true,
   "homepage": "https://irate.surge.sh/",
   "main": "server.js",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "node --watch server.js",
     "build": "cd client && rm -rf dist && npm install && npm run build"
