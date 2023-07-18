@@ -10,7 +10,7 @@
   "proxy": "http://localhost:3001",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cd dist && touch CNAME && echo 'irate.surge.sh' >> CNAME && npx surge --project $PWD --domain irate.surge.sh"
+    "build": "vite build && cd dist && touch CNAME && echo 'irate.surge.sh' >> CNAME && npx surge --project $PWD --domain 'irate.surge.sh'"
   },
   "dependencies": {
     "axios": "^1.4.0",
