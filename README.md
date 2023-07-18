@@ -38,7 +38,7 @@
 
 ### ***Future Updates***
 
-- [ ] Deploy backend
+- [x] ~~Deploy backend~~
 - [x] ~~Add a Restaurant~~
 - [x] ~~User Auth~~
 - [ ] Search / filter functionality for restaurants page
