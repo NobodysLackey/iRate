@@ -34,7 +34,7 @@ const RestaurantDetails = ({
               <div>
                 {user ? <button onClick={newReview}>Write A Review</button> : null}
                 <div className='reviews-flex'>
-                  {selectedRestaurant.reviews.map((review, index) => (
+                  {selectedRestaurant.reviews?.map((review, index) => (
                     <ReviewCard
                       key={review._id}
                       review={review}

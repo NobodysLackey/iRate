@@ -5,7 +5,7 @@
   "version": "2.0.0",
   "license": "MIT",
   "private": true,
-  "homepage": "https://irate.surge.sh/",
+  "homepage": "https://irate.surge.sh",
   "type": "module",
   "proxy": "http://localhost:3001",
   "scripts": {
