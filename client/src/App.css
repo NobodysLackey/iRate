@@ -110,6 +110,29 @@ footer {
   justify-content: space-between;
 }
 
+footer > div {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+#footer-center {
+	width: 60vw;
+	justify-content: center;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 0.65em;
+}
+
+#footer-left {
+	width: 20vw;
+	justify-content: flex-start;
+}
+
+#footer-right {
+	width: 20vw;
+	justify-content: flex-end;
+}
+
 .nav-links {
   width: 75vw;
   display: flex;
@@ -252,6 +275,7 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   padding-bottom: 40px;
+	margin-top: 5vh;
 }
 
 .register-form,
