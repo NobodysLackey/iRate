@@ -8,8 +8,8 @@
   "homepage": "https://irate.surge.sh/",
   "main": "server.js",
   "engines": {
-    "node": "20.x",
-    "npm": "9.x"
+    "node": "21.x",
+    "npm": "10.x"
   },
   "scripts": {
     "dev": "node --watch server.js",
