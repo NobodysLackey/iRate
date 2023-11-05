@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import Loader from '../components/Loader'
 import ReviewCard from '../components/ReviewCard'
 
 const RestaurantDetails = ({
@@ -7,6 +9,8 @@ const RestaurantDetails = ({
   newReview,
   user
 }) => {
+  const [isLoading, setIsLoading] = useState(true)
+
   return (
     <section className="page">
       {!selectedRestaurant ? (
@@ -17,23 +21,31 @@ const RestaurantDetails = ({
         <div>
           <div className="details">
             <h1 className="title">{selectedRestaurant.name}</h1>
+            {isLoading && <Loader />}
             <img
               src={selectedRestaurant.photo_url}
               alt={selectedRestaurant.name}
+              onLoad={() => setIsLoading(false)}
             />
-            <h1>{selectedRestaurant.city}, {selectedRestaurant.state}</h1>
+            <h1>
+              {selectedRestaurant.city}, {selectedRestaurant.state}
+            </h1>
           </div>
           <div className="reviews">
             <h1 className="title">Reviews</h1>
             {selectedRestaurant.reviews.length === 0 ? (
               <div>
                 <h3 className="no-reviews">No Reviews Yet!</h3>
-                {user ? <button onClick={newReview}>Write A Review</button> : null}
+                {user ? (
+                  <button onClick={newReview}>Write A Review</button>
+                ) : null}
               </div>
             ) : (
               <div>
-                {user ? <button onClick={newReview}>Write A Review</button> : null}
-                <div className='reviews-flex'>
+                {user ? (
+                  <button onClick={newReview}>Write A Review</button>
+                ) : null}
+                <div className="reviews-flex">
                   {selectedRestaurant.reviews?.map((review, index) => (
                     <ReviewCard
                       key={review._id}
