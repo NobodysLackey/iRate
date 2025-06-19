@@ -21,7 +21,7 @@ const RestaurantDetails = ({
         <div>
           <div className="details">
             <h1 className="title">{selectedRestaurant.name}</h1>
-            {isLoading && <Loader />}
+            {isLoading && <Loader image="loader image-loader" />}
             <img
               src={selectedRestaurant.photo_url}
               alt={selectedRestaurant.name}

@@ -1,6 +1,6 @@
-const Loader = () => {
+const Loader = ({ image }) => {
   return (
-    <div className="loader">
+    <div className='loader' id={image ? image : null}>
       <div class="cssload-dots">
         <div class="cssload-dot"></div>
         <div class="cssload-dot"></div>
